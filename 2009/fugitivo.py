@@ -1,26 +1,22 @@
-n = input().split()
-N1 = int(n[0])
-m = int(n[1])
-O = 0
-N = 0
-L = 0
-S = 0
-for i in range (N1):
-	temp = input().split()
-	temp[1] = int(temp[1])
-	if temp[0] == "N":
-		N += temp[1]
-	if temp[0] == "O":
-		O += temp[1]
-	if temp[0] == "L":
-		L += temp[1]
-	if temp[0] == "S":
-		S += temp[1]
-Htotal = O - L
-Vtotal = N - S
-x = abs(Htotal)
-y = abs(Vtotal)
-if x > m or y > m:
-	print("1")
-else:
-	print("0")
+a = True
+temp = [int(x) for x in input().split()]
+dmax = pow(temp[1],2)
+x = 0 #valor horizontal
+y = 0 #valor vertical
+for i in range(temp[0]):
+    m = input().split() #movimento desta linha
+    d = int(m[1]) #distância percorrida
+    if m[0] == "N":
+        y += d
+    elif m[0] == "S":
+        y -= d
+    elif m[0] == "L":
+        x += d
+    elif m[0] == "O":
+        x -= d
+    if pow(x,2)+pow(y,2) > dmax:
+        print(1)
+        a = False
+        break
+if a:
+    print(0)
