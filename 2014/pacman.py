@@ -1,19 +1,21 @@
 n = int(input())
-a = ""
-up = 0
-temp = 0
-for i in range(n):
-	if i%2 == 0:
-		a += input()
-	else:
-		a += input()[::-1]
-for i in list(a):
-	if i == "o":
-		temp += 1
-	elif i == "A":
-		if temp > up:
-			up = temp
-		temp = 0
-if temp > up:
-	up = temp
-print(up)
+c = 0
+points = []
+caminholista = []
+caminho = ""
+for e in range (n):
+	temp = input()
+	caminholista.insert(len(caminholista), temp)
+for index, k in enumerate(caminholista):
+	if index % 2 != 0:
+		caminholista[index] = caminholista[index][::-1]
+caminho = ''.join(caminholista)
+for i in caminho:
+  if i == "o":
+      c += 1
+  if i == "A":
+      points.insert(len(points), c)
+      c = 0
+  if i == caminho[-1]:
+      points.insert(len(points), c)
+print (max(points))
