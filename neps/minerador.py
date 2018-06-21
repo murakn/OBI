@@ -4,7 +4,7 @@ g = [float(x) for x in input().split()]
 lmax = [0,0]
 lmin = [float('inf'),0]
 for i in range(nm[0]):
-	l = sum(g[:i+1]) * v[i]
+	l = sum(g[:i+1]) * v[i] * nm[1]
 	if l > lmax[0]:
 		lmax[0] = l
 		lmax[1] = i+1
