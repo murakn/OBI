@@ -29,6 +29,6 @@ for i in p:
 		cc += 1
 		ccom = [x-1 for x in ccom]
 		bcom[1] -= 1
-print("A: "+str(ac))
-print("B: "+str(bc))
-print("C: "+str(cc))
+print("A: %d"%ac)
+print("B: %d"%bc)
+print("C: %d"%cc)
