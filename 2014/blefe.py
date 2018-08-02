@@ -1,6 +1,6 @@
-inutil = raw_input()
-a = [int(x) for x in raw_input().split()]
-b = [int(x) for x in raw_input().split()]
+inutil = input()
+a = [int(x) for x in input().split()]
+b = [int(x) for x in input().split()]
 temp = True
 temp2 = True
 for index,i in enumerate(b):
